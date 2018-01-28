@@ -1,0 +1,34 @@
+/* components/page/huxing/swHuxing/swHuxing.wxss */
+.sw-wrap{
+  height: 616rpx;
+}
+.sw-wrap .list{
+  height: 100%;
+  padding:20rpx;
+}
+.sw-wrap .list .img{
+  width: 100%;
+  height: 492rpx;
+}
+.sw-wrap .list .text-box{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+}
+.sw-wrap .list .text-box .text{
+  font-size: 32rpx;
+  color:#333;
+  margin-right: 20rpx;
+  max-width: 80%;
+}
+.sw-wrap .list .text-box .liyou{
+  display: flex;
+  height: 36rpx;
+  font-size: 24rpx;
+  align-items: center;
+  background: #FFE7DF;
+  border-radius: 36rpx;
+  padding:0 20rpx;
+  color: #FF6633;
+}

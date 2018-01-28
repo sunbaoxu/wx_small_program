@@ -1,0 +1,26 @@
+<!--pages/album/album.wxml-->
+<view class='wrap g-portrait-fen'>
+  <view class='body'>
+    <swiper 
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" 
+      interval="{{interval}}" 
+      duration="{{duration}}" 
+      bindchange="changeList" 
+      class='sw-wrap'
+      current="{{activeIndex}}"
+      >
+        <swiper-item wx:for="{{arr}}" wx:key="{{index}}" class="sw-list">
+          <image src="{{'http://imgs.zeju.cn/'+item.pic_file}}" class="slide-image img"/>
+        </swiper-item>
+    </swiper>
+  </view>
+  <view class='footer'>
+    <text 
+      wx:for="{{btnTextArr}}" 
+      wx:for-index="key"
+      wx:key="{{key}}" 
+      class="{{key%3==1?'cont':''}} {{item == btnText?'on':''}}"
+      >{{item}}{{item == btnText ? '('+(num+1)+'/' :'('}}{{btnNumArr[key]}})</text>
+  </view>
+</view>

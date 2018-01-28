@@ -1,0 +1,7 @@
+<!--components/page/nav/nav.wxml-->
+<template name="odd">
+  <view> odddsfaasdf </view>
+</template>
+<template name="even">
+  <view> even </view>
+</template>

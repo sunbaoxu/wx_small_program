@@ -1,0 +1,16 @@
+<!--components/page/loading/loading.wxml-->
+<template name="loading">
+  <!-- 加载更多 -->
+  <view class='loading-box g-flex-center-center' wx:if="{{type==1}}">
+    <image class='img' src="/assets/images/loading.gif"></image>
+    <text>页面加载中...</text>
+  </view>
+  <!-- 没有更多  -->
+  <view class='loading-box g-flex-center-center' wx:elif="{{type==2}}">
+    <text>没有更多了</text>
+  </view>
+  <!--加载失败  -->
+  <view class='loading-box g-flex-center-center' wx:else>
+    <text>加载失败，请检查网络</text>
+  </view>
+</template>

@@ -1,0 +1,66 @@
+/* components/page/loupan/slide/slide.wxss */
+.slide-dl{
+  display: flex;
+  padding:30rpx 0;
+  box-sizing: border-box;
+}
+.slide-dl .slide-dt{
+  height: 168rpx;
+  width: 224rpx;
+  position: relative;
+  margin-right: 20rpx;
+}
+.slide-dt .img{
+  height:100%;
+  width: 100%;
+}
+.slide-dt .icon-box{
+  position: absolute;
+  left:-8rpx;
+  top:12rpx;
+  display: flex;
+}
+.slide-dt .icon-box .icon{
+  width: 10rpx;
+  height:42rpx;
+}
+.slide-dt .icon-box text{
+  background: #FF3B30;
+  color:#fff;
+  font-size: 20rpx;
+  height: 32rpx;
+  padding-right: 10rpx;
+}
+/* dd  */
+.slide-dd{
+  width: 0;
+  flex: 1;
+}
+.slide-dd .title{
+  font-size: 32rpx;
+  color:#333;
+}
+.slide-dd .address{
+  font-size: 24rpx;
+  color:#999;
+}
+.slide-dd .labels{
+  display: flex;
+  font-size: 18rpx;
+}
+.slide-dd .labels .span{
+  padding:0 10rpx;
+}
+.slide-dd .last{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.slide-dd .price{
+  color: #FF3B30;
+  font-size: 28rpx;
+}
+.slide-dd .area{
+  color: #999;
+  font-size: 24rpx;
+}

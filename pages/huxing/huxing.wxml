@@ -1,0 +1,27 @@
+<!--pages/huxing/huxing.wxml-->
+<!-- 加载更多  -->
+<import src="/components/page/loading/loading.wxml"/> 
+
+<view class="wrap">
+  <view wx:for="{{arr}}" wx:key="index" class='dl {{index != arr.length-1?"g-border":""}}' wx:for-item="m">
+    <image class='dt' src="{{'http://imgs.zeju.cn/'+m.house_url}}"></image>
+    <view class='dd'>
+      <view class='header'>
+        <text class='name'>{{m.name}}</text>
+        <text wx:if="{{sale_status_name==null}}" class='status'>暗室逢灯</text>
+      </view>
+      <view class='header1'>
+        <text class='jiegou'>{{m.family}}室{{m.office}}厅{{m.defend}}卫</text>
+        <text class='mianji'>{{m.house_acreage}}</text>
+        <text class='liyou' wx:if="{{house_direction!=''}}">{{m.house_direction}}</text>
+      </view>
+      <view class='body'>
+        <text class='desc'>{{m.house_desc}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 加载更多  -->
+  <view wx:if="{{loadingAsync}}">
+    <template is="loading" data="{{type}}"/> 
+  </view>
+</view>

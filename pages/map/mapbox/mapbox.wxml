@@ -1,0 +1,4 @@
+<!--pages/map/mapBox/mapbox.wxml-->
+<template name="mapbox">
+   <map id="map" longitude="116.404269" latitude="39.915378" scale="13"  markers="{{mapObj.markers}}" style="width: 100%; height: 250px;"></map> 
+</template>

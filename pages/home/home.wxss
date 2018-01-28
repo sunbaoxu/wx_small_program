@@ -1,0 +1,81 @@
+page {
+  display: block;
+  min-height: 100%;
+  background:#f6f6f6;
+}
+/* 头部 */
+.header{
+  font-size: 32rpx;
+  border-bottom:2rpx solid #E5E5E5;
+  height: 90rpx;
+  box-sizing: border-box;
+}
+.header .text{
+  height: 100%;
+  padding:0 20rpx;
+  background: #fff;
+}
+/* 会员特权介绍 */
+.member{
+  padding: 40rpx 20rpx 20rpx;
+  box-sizing: border-box;
+  font-size:28rpx;
+  background: #fff;
+  margin-bottom:20rpx;
+}
+.member .title{
+  color:#f63;
+  margin-bottom:10rpx;
+}
+.member .text{
+  color:#666;
+  margin-bottom: 20rpx;
+}
+/* 表单输入 */
+.from{
+  background: #fff;
+}
+.form-box{
+  width: 100%;
+  padding:0 20rpx;
+  font-size: 32rpx;
+}
+.form-box .list{
+  border-bottom: 1px solid #eee;
+  height: 92rpx;
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+}
+.form-box .input{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.form-box .key-btn{
+  position: absolute;
+  right:0;
+  top:0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color:#999;
+}
+.form-box .on{
+  background: #f63;
+}
+.form-box .list-btn{
+  border:none;
+  margin:20rpx 0;
+  /* background: #f6f6f6; */
+}
+.form-box .submit{
+  display: block;
+  width:100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #ffb299;
+  color:#fff;
+  font-size:32rpx;
+}

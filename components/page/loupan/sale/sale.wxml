@@ -1,0 +1,39 @@
+<!--components/page/loupan/sale/sale.wxml-->
+<template name="items">
+  <view wx:for="{{itemArr}}" wx:key="ind" wx:for-item="m" wx:for-index="ind" class="dl">
+    <navigator class="dt" url="{{'/pages/sale/detaile/detaile?id='+m.id}}">
+      <!-- 楼盘图片 -->
+      <image  class="img" src="{{'http://imgs.zeju.cn'+m.img_url}}"/>
+      <!--楼盘title  -->
+      <view class="box">
+        <view class="title">
+          <view class="name">{{m.name}}</view>
+          <view v-if="{{m.building_area!=''}}" class="area">建面：{{m.building_area}}</view>
+        </view>
+        <view class="p g-text-ove1">楼盘地址：{{m.address}}</view>
+      </view>
+      <!--楼盘 icon  -->
+      <view class="icon-box">
+        <image class="icon-img" src="/assets/images/icon/icon.png"></image>
+        <view class="icon-text">{{m.advantages}}</view>
+      </view>
+    </navigator>
+    <view class="dd">
+      <view class="left g-portrait-fen">
+        <view class="p">
+          <view class="price">{{m.price_name}}    {{m.price}}  {{m.price_unit}}</view>
+          <view class="labels">
+            <view wx:for="{{m.labels}}" wx:key="index" class="span g-label {{'g-label'+(index+1)}}">{{item}}</view>
+          </view>
+        </view>
+        <view class="time">{{m.open_at}}特价开抢</view>
+      </view>
+      <view class="right g-portrait-fen">
+        <view class='date'>
+          <view class='span span-left g-flex-center-center'>06</view>:<view class='span g-flex-center-center'>56</view>:<view class='span span-right g-flex-center-center'>20</view>
+        </view>
+        <view class='text'>距抢购结束倒计时</view>
+      </view>
+    </view>
+  </view>
+</template>

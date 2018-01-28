@@ -1,0 +1,18 @@
+<!--components/page/dongtai/dongtai.wxml-->
+<template name="dongtaiList">
+  <view wx:for="{{dongtaiArr}}" wx:key="index" class="dongtai-list {{index < dongtaiArr.length-1?'g-border':''}}" wx:for-item="m">
+    <view class='dl-header'>
+      <text class='name'>{{m.title}}</text>
+      <text class='status'>{{m.category}}</text>
+    </view>
+    <view class='dl-body'>
+      {{m.content}}
+    </view>
+    <view class='dl-footer'>
+      <image src="{{'http://imgs.zeju.cn/'+m.user_portrait}}" class='img' wx:if="{{m.user_portrait!=null}}"></image>
+      <image src="/assets/images/zhanweitu.png" class='img' wx:else></image>
+      <text class='name'>{{m.user_name}}</text>
+      <text class='time'>{{m.created_at}}</text>
+    </view>
+  </view>
+</template>

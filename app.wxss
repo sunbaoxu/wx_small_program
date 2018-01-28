@@ -1,0 +1,56 @@
+/**app.wxss**/
+.g-clear{clear: both;height:0;width:0;overflow: hidden;display: block;margin:0;padding:0;}
+.g-text-ove2{display: -webkit-box;-webkit-box-orient: vertical; -webkit-line-clamp: 2;overflow: hidden;}
+.g-text-ove1{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.g-border:after{content:'';position: absolute;bottom:0;width:100%;height:1px;background: #EAEAEA;overflow: hidden;left:0;transform:translate(0%,0) scale(1,1);}
+.g-border{position: relative;}
+.g-border1{position: relative;}
+.g-border1:before{content:'';position: absolute;top:0;width:100%;height:1px;background: #EAEAEA;overflow: hidden;left:0;transform:translate(0%,0) scale(1,1);}
+.g-back{background-position: center center;background-repeat: no-repeat;background-size:cover;}
+.g-block{display: block;width:100%;height:100%;}
+.g-portrait-fen{display: flex;flex-direction: column;justify-content: space-between;}
+.g-portrait-fen-ya{display: flex;flex-direction: column;justify-content: space-between;box-sizing: border-box;}
+.g-portrait-fen-center-ya{display: flex;flex-direction: column;justify-content: space-between;align-items: center;box-sizing: border-box;}
+.g-portrait-center-ya{display: flex;flex-direction: column;justify-content: center;box-sizing: border-box;align-items: center;}
+.g-flex-fen-ya{display: flex;justify-content: space-between;box-sizing: border-box;}
+.g-flex-center{display: flex;justify-content: center;}
+.g-flex-center-ya{display: flex;justify-content: center;box-sizing: border-box;}
+.g-flex-fen{display: flex;justify-content: space-between;}
+.g-flex-fen-center-ya{display: flex;justify-content: space-between;align-items: center;box-sizing: border-box;}
+.g-flex-fen-center{display: flex;justify-content: space-between;align-items: center;}
+.g-flex-center-center{display: flex;justify-content: center;align-items: center;width:100%;}
+.g-flex-mo-center-ya{display: flex;align-items: center;width:100%; box-sizing:border-box;} 
+
+/* labels 样式  */
+.g-label{
+  display: flex;
+  padding:0 8rpx;
+  height: 30rpx;
+  align-items: center;
+  background: yellow;
+  margin-right: 10rpx;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+}
+.g-label1{
+  background: #FFE2D9;
+  color: #FF6633;
+}
+.g-label2{
+  background: #FFE1E2;
+  color: #FF5A5F;
+}
+.g-label3{
+  background: #DEF1FF;
+  color: #4CA8EB;
+}
+
+/*动画  */
+@keyframes g-up{
+  0%   {transform: translate(0,0);}
+  100% {transform: translate(0,-100%);}
+}
+@keyframes g-down{
+  0%   {transform: translate(0,-100%);}
+  100% {transform: translate(0,0);}
+}

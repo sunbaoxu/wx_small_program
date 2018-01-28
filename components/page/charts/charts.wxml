@@ -1,0 +1,4 @@
+<!--components/page/charts/charts.wxml-->
+<template name="charts-box">
+  <canvas style="width: 300px; height: 200px;" canvas-id="firstCanvas" class='canvas'></canvas>
+</template>

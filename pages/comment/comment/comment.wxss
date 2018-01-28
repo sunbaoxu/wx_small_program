@@ -1,0 +1,9 @@
+/* pages/comment/comment/comment.wxss */
+/* 点评  */
+@import "/components/page/dianping/pingbox/pingbox.wxss";
+/* 点评  */
+@import "/components/page/dianping/pinglist/pinglist.wxss";
+.wrap{
+  padding:0 20rpx;
+  box-sizing: border-box;
+}

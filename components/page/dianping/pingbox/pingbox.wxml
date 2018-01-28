@@ -1,0 +1,28 @@
+<!--components/page/dianping/pingbox/pingbox.wxml-->
+<!-- 星星 -->
+<import src="/components/base/star/star.wxml"/> 
+
+
+<template name="pingbox">
+  <view class='pb-wrap'>
+    <view class='left g-portrait-fen-center-ya'>
+      <view class='num'>{{obj.average_score}}</view>
+      <view class='h'>综合点评</view>
+      <view class='p'>高于78%同类新盘</view>
+    </view>
+    <view class='right g-portrait-fen-ya'>
+      <view class='star-list'>
+        <text class='h'>周边配套：</text>
+        <template is="starbox" data="{{num:obj.mating_score}}"/>
+      </view>
+      <view class='star-list'>
+        <text class='h'>交通便利：</text>
+        <template is="starbox" data="{{num:obj.traffic_score}}"/> 
+      </view>
+      <view class='star-list'>
+        <text class='h'>绿化环境：</text>
+        <template is="starbox" data="{{num:obj.living_condition_score}}"/> 
+      </view>
+    </view>
+  </view>
+</template>

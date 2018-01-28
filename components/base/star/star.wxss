@@ -1,0 +1,6 @@
+/* components/base/star/star.wxss */
+.tp-star{
+  height:32rpx;
+  width: 34rpx;
+  margin-right: 10rpx;
+}

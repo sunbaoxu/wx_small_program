@@ -1,0 +1,5 @@
+/* pages/dongtai/dongtai.wxss */
+/* 动态  */
+@import "/components/page/dongtai/dongtai.wxss";
+/* 加载更多  */
+@import "../../components/page/loading/loading.wxss";

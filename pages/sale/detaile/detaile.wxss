@@ -1,0 +1,228 @@
+/* pages/sale/detaile/detaile.wxss */
+/* 户型布局样式  */
+@import "/components/page/huxing/swHuxing/swHuxing.wxss";
+/* 动态  */
+@import "/components/page/dongtai/dongtai.wxss";
+/* 点评  */
+@import "/components/page/dianping/pingbox/pingbox.wxss";
+/* 点评  */
+@import "/components/page/dianping/pinglist/pinglist.wxss";
+page {
+  display: block;
+  min-height: 100%;
+  background:#f6f6f6;
+  color :#333;
+}
+/* 楼盘详情  图片展示文案 */
+.section-detaile .dt{
+  position: relative;
+  height: 560rpx;
+}
+.section-detaile .dt .a{
+  width: 100%;
+  height: 560rpx;
+}
+.section-detaile .dt .img{
+  width: 100%;
+  height:100%;
+}
+.section-detaile .dt .img-box{
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  color: #fff;
+  font-size: 20rpx;
+  background: rgba(0,0,0,0.7);
+  padding:0 20rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 36rpx;
+}
+.section-detaile .dt .youhui-box{
+  position: absolute;
+  top: 20rpx;
+  right: 0rpx;
+  color: #fff;
+  font-size: 48rpx;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  padding:0 20rpx 0 40rpx;
+  background-image: linear-gradient(-90deg, #DA2AF4 0%, #FC4A4D 100%);
+  border-radius: 100rpx 0 0 100rpx;
+}
+/*  楼盘详情  文案 */
+.dd{
+  background: #fff;
+  padding-bottom: 30rpx;
+}
+.dd .title-box{
+  height: 136rpx;
+  display: flex;
+  width: 100%;
+}
+.dd .title-box .left{
+  width:0;
+  flex: 1;
+  background-image: linear-gradient(-90deg,#FF1920  0%,  #FF5A5F 100%);
+  color:#fff;
+  padding:24rpx 20rpx;
+  box-sizing: border-box;
+}
+.dd .title-box .title{
+  font-size: 40rpx;
+}
+.dd .title-box .addres{
+  font-size: 24rpx;
+}
+.dd .title-box .right{
+  background: #FFD0D2;
+  width: 230rpx;
+  font-size: 20rpx;
+  color:#333;
+  padding: 26rpx 0 ;
+}
+/* 楼盘文案 显示隐藏  */
+.dd .text-box{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.dd .text-box .list{
+  margin-bottom: 20rpx;
+}
+.dd .text-box .price-time{
+  display: flex;
+  align-items: flex-end;
+  color: #ff3235;
+  justify-content: space-between;
+  /* height: 48rpx; */
+}
+.dd .text-box .price-time .price{
+  font-size: 28rpx;
+}
+.dd .text-box .price-time .price text{
+  font-size: 60rpx;
+}
+.dd .text-box .price-time .time{
+  font-size: 28rpx;
+}
+.dd .text-box .dizhi{
+  font-size: 32rpx;
+  color: #333333;
+}
+.dd .text-box .liyou{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.dd .text-box .liyou .labels{
+  display: flex;
+  font-size: 24rpx;
+}
+.dd .text-box .liyou .labels .span{
+  height: 40rpx;
+  padding:0 12rpx;
+}
+.dd .text-box .liyou .a{
+  font-size: 28rpx;
+  color: #FF6633;
+}
+/* 隐藏文案  */
+.dd .text-box1{
+  padding:0 20rpx;
+  box-sizing: border-box;
+}
+.dd .text-box1 .list{
+  font-size: 28rpx;
+  color:#333;
+  padding-bottom: 10rpx;
+}
+.dd .text-box1 .list>view{
+  padding-top: 10rpx;
+}
+.dd .text-box1 .list>view .label{
+  width: 120rpx; 
+  display: inline-block;
+  text-align: justify;
+  line-height: 0;
+  color:#666;
+}
+.dd .text-box1 .list>view .label:after{
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+.dd .text-box1 .list>view text{
+  font-size: 30rpx;
+}
+.dd .text-box3{
+  font-size: 28rpx;
+  color: #f63;
+  padding:0 20rpx;
+}
+.dd .text-box3 text{
+  line-height: 64rpx;
+  text-align: center;
+  width: 100%;
+  display: block;
+  background: #f9f9f9;
+  border-radius: 12rpx;
+}
+/* 公共样式  */
+.section{
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.section .s-header{
+  height: 90rpx;
+  padding:0 20rpx;
+}
+.section .s-header .text{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 38rpx;
+  color:#333;
+}
+.section .s-header .genduo{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color:#999;
+}
+.section .s-header .genduo>text{
+  margin-right:10rpx;
+}
+
+/* 户型  */
+
+/* 动态  */
+.s-dongtai{
+  padding:0 20rpx;
+  box-sizing: border-box;
+}
+/*点评  */
+.s-ping-list-box{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+/* 图表  */
+.s-charts-box{
+  background: #4F5359;
+}
+.s-charts-box .list-box{
+  padding:0 30rpx;
+  box-sizing: border-box;
+}
+.s-charts-box .list-box .title{
+  color:#fff;
+  font-size: 32rpx;
+  padding:40rpx 0;
+}
+.s-main .canvas{
+  height: 450rpx;
+  width: 100%;
+  background:  #4F5359;
+}

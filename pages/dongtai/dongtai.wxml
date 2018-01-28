@@ -1,0 +1,13 @@
+<!--pages/dongtai/dongtai.wxml-->
+<!-- 楼盘动态  -->
+<import src="/components/page/dongtai/dongtai.wxml"/> 
+<!-- 加载更多  -->
+<import src="../../components/page/loading/loading.wxml"/> 
+
+<view class='wrap'>
+  <template is="dongtaiList" data="{{dongtaiArr}}"/>
+  <!-- 加载更多  -->
+  <view wx:if="{{loadingAsync}}">
+    <template is="loading" data="{{type}}"/> 
+  </view>
+</view>

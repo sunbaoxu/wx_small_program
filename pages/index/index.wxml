@@ -1,0 +1,105 @@
+<!--index.wxml-->
+<!-- 加载更多  -->
+<import src="/components/page/loading/loading.wxml"/> 
+<!-- l楼盘列表  -->
+<import src="/components/page/loupan/slide/slide.wxml"/> 
+
+
+<scroll-view 
+  scroll-y = "true"
+  upper-threshold="60"
+  class="wrap"
+  bindscrolltoupper = "leaveTop"
+  bindscrolltolower = "reachBottom"
+  bindscroll = "scrollFn"
+  >
+  <view class='header'>
+   <!--搜索  -->
+    <view class='section sou-box'>
+      <view class='sou-back'>
+        <!-- 城市 -->
+        <view class="city g-flex-center-center" bindtap="cityBtnFn">
+          <text>{{cityText}}</text>
+          <image src='/assets/images/jian-xia.png' class='img'></image>
+        </view>
+        <!-- 搜索  -->
+        <view class="shu-box" >
+          <icon type="search" size="12" class='img'/>
+          <input type='text' class='input' placeholder='请输入楼盘名称'></input>
+        </view>
+      </view>
+      <!-- 城市菜单下拉  -->
+      <view class='city-box lei-box' wx:if="{{cityAsync}}" >
+        <view 
+          wx:for="{{cityArr}}" 
+          wx:for-item="m" 
+          wx:key="{{index}}"
+          class='lei-list g-flex-fen-center-ya {{cityText== m.label?"lei-list-on":""}}'
+          data-text="{{m.label}}"
+          data-name="{{m.name}}"
+          bindtap="cliCityFn"
+          >
+          <text>{{m.label}}</text>
+          <icon type='success_no_circle' color='#f63' size="16" class='icon'></icon>
+        </view>
+      </view>
+    </view>
+    <!-- 下拉菜单  -->
+    <view class='section caidan-box g-border'>
+      <view class='cb-box'>
+        <view class='list g-flex-center-center'>
+          <text class='text'>区域</text>
+          <image src="{{'/assets/images/sanjiao'+(leiAsync?'-on':'')+'.png'}}" class='icon-san'></image>
+        </view>
+        <view class='list g-flex-center-center'>
+          <text class='text'>价格</text>
+          <image src="{{'/assets/images/sanjiao'+(leiAsync?'-on':'')+'.png'}}" class='icon-san'></image>
+        </view>
+        <view class='list g-flex-center-center'>
+          <text class='text'>房型</text>
+          <image src="{{'/assets/images/sanjiao'+(leiAsync?'-on':'')+'.png'}}" class='icon-san'></image>
+        </view>
+        <view class='list g-flex-center-center'>
+          <text class='text'>更多</text>
+          <image src="{{'/assets/images/sanjiao'+(leiAsync?'-on':'')+'.png'}}" class='icon-san'></image>
+        </view>
+      </view>
+    </view>
+    <!--分类  -->
+    <view class='section leiNav'>
+      <view class='lei-nav g-flex-fen-ya'>
+        <!-- 分类btn -->
+        <view class='leiBtn g-flex-center-center list {{leiAsync?"leiBtn-on":""}}' bindtap="clickLeiFn">
+          <text>{{leiText}}</text>
+          <image src="{{'/assets/images/sanjiao'+(leiAsync?'-on':'')+'.png'}}" class='icon-san'></image>
+        </view>
+        <!--楼盘搜索个数  -->
+        <view class='textName g-flex-center-center list'>共为您找到{{loupanNum}}个房源</view>
+      </view>
+      <!--下拉菜单  -->
+      <view class='lei-box {{leiAsync?"lei-box-on":""}}'>
+        <view 
+          wx:for="{{leiArr}}" 
+          wx:for-item="m" 
+          wx:key="{{index}}"
+          class='lei-list g-flex-fen-center-ya {{leiText==m.label?"lei-list-on":""}}'
+          data-text="{{m.label}}"
+          data-name="{{m.name}}"
+          bindtap="cliLeiListFn"
+          >
+          <text>{{m.label}}</text>
+          <icon type='success_no_circle' color='#f63' size="16" class='icon'></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view  class='main'>
+    <template is="slide-box" data="{{arr}}"/> 
+  </view>
+  <!-- 加载更多  -->
+  <view wx:if="{{loadingAsync}}">
+    <template is="loading" data="{{type}}"/> 
+  </view>
+  <!-- 页面背景 遮罩  -->
+  <view class='back {{backAsync?"back-on":""}}'></view>
+</scroll-view>

@@ -1,0 +1,5 @@
+<!--components/base/star/star.wxml-->
+<template name="starbox">
+  <image class='tp-star' src="/assets/images/star-on.png" wx:for="{{5}}" wx:for-index="ind" wx:key="index" wx:if="{{num/2 > ind}}">{{num}}</image>
+  <image class='tp-star' src="/assets/images/star.png" wx:for="{{5}}" wx:for-index="ind" wx:key="index" wx:if="{{num/2 < ind+1}}">{{num}}</image> 
+</template>

@@ -1,0 +1,36 @@
+/* components/page/dianping/pinglist/pinglist.wxss */
+.tp-ping-list{
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+.tp-ping-list .dl{
+  display: flex;
+}
+.tp-ping-list .dl .dt{
+  width: 88rpx;
+  height: 88rpx;
+  margin-right: 20rpx;
+}
+.tp-ping-list .dl .dd{
+  height: 88rpx;
+  width: 0;
+  flex: 1;
+  padding-bottom: 0;
+}
+.tp-ping-list .dd .h4{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.tp-ping-list .dd .h4 .title{
+  font-size: 28rpx;
+  color:#333;
+}
+.tp-ping-list .dd .h4 .time{
+  font-size: 24rpx;
+  color:#999;
+}
+.tp-ping-list .text{
+  font-size: 28rpx;
+  color:#333;
+}

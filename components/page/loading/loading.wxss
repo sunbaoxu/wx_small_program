@@ -1,0 +1,11 @@
+/* components/page/loading/loading.wxss */
+.loading-box{
+  height: 100rpx;
+  color: #666;
+  font-size: 34rpx;
+}
+.loading-box .img{
+  height: 44rpx;
+  width: 44rpx;
+  margin-right: 10rpx;
+}

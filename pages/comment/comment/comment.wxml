@@ -1,0 +1,20 @@
+<!--pages/comment/comment/comment.wxml-->
+<!-- 楼盘点评  -->
+<import src="/components/page/dianping/pingbox/pingbox.wxml"/> 
+<!-- 楼盘点评列表  -->
+<import src="/components/page/dianping/pinglist/pinglist.wxml"/> 
+<!-- 加载更多  -->
+<import src="/components/page/loading/loading.wxml"/> 
+
+<view class='wrap'>
+  <view class=''>
+    <template is="pingbox" data="{{obj}}"/>
+  </view>
+  <view class='g-border1'>
+    <template is="pinglist" data="{{arr}}"/>
+  </view>
+  <!-- 加载更多  -->
+  <view wx:if="{{loadingAsync}}">
+    <template is="loading" data="{{type}}"/> 
+  </view>
+</view>

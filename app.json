@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/sale/sale",
+    "pages/sale/detaile/detaile",
+    "pages/activity/activity",
+    "pages/home/home",
+    "pages/huxing/huxing",
+    "pages/dongtai/dongtai",
+    "pages/comment/comment/comment",
+    "pages/album/album",
+    "pages/comment/write_comment/write_comment"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "择居网",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#f63",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/sale/sale",
+        "text": "特卖"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "活动"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false
+}

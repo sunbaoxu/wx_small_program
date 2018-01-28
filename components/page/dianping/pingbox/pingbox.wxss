@@ -1,0 +1,41 @@
+/* components/page/dianping/pingbox/pingbox.wxss */
+/* 点评  */
+@import "/components/base/star/star.wxss";
+
+.pb-wrap{
+  width: 100%;
+  display: flex;
+  padding: 34rpx 10rpx;
+  box-sizing: border-box;
+  justify-content: space-around;
+}
+.pb-wrap .left{
+  width: 200rpx;
+  height: 160rpx;
+}
+.pb-wrap .left .num{
+  color: #FFBB2A;
+  font-size:72rpx;
+  line-height: 72rpx;
+}
+.pb-wrap .left .h{
+  color:#333;
+  font-size: 28rpx;
+}
+.pb-wrap .left .p{
+  color:#999;
+  font-size: 24rpx;
+}
+/* right  */
+.pb-wrap .right{
+  height: 160rpx;
+}
+.pb-wrap .right .h{
+  font-size: 28rpx;
+  color:#333;
+}
+.pb-wrap .right .star-list{
+  display: flex;
+  height: 34rpx;
+  align-items: center;
+}

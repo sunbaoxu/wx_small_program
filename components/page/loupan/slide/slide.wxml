@@ -1,0 +1,30 @@
+<!--components/page/loupan/slide/slide.wxml-->
+<template name="slide-box">
+  <view 
+    wx:for="{{arr}}" 
+    wx:for-item="m" 
+    class='slide-dl {{index <arr.length-1?"g-border":""}}' 
+    wx:key="{{index}}"
+    >
+    <!-- 图片  -->
+    <view class='slide-dt'>
+      <view class='icon-box'>
+        <image src="/assets/images/icon/icon.png" class='icon'></image>
+        <text>{{m.sale_status}}</text>
+      </view>
+      <image src="{{'http://imgs.zeju.cn/'+m.img_url}}" class='img'></image>
+    </view>
+    <!-- 内容  -->
+    <view class='slide-dd g-portrait-fen'>
+      <view class='title g-text-ove1'>{{m.name}}</view>
+      <view class='address g-text-ove1'>{{m.address}}</view>
+      <view class="labels">
+        <text wx:for="{{m.labels}}" wx:key="index" class="span g-label {{'g-label'+(index+1)}}">{{item}}</text>
+      </view>
+      <view class='last'>
+        <text class='price'>{{m.price + m.price_unit}}</text>
+        <text class='area'>建面{{m.building_area}}</text>
+      </view>
+    </view>
+  </view>
+</template>

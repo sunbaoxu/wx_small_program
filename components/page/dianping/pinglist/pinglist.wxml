@@ -1,0 +1,22 @@
+<!--components/page/dianping/pinglist/pinglist.wxml-->
+<!-- 星星 -->
+<import src="/components/base/star/star.wxml"/> 
+
+
+<template name="pinglist">
+  <view wx:for="{{arr}}" wx:key="index" class="tp-ping-list {{index <arr.length-1?'g-border':''}}" wx:for-item="m">
+    <view class='dl'>
+      <image src="{{'http://imgs.zeju.cn/'+m.customer_head_img_url}}" class='dt'></image>
+      <view class='dd g-portrait-fen'>
+        <view class='h4'>
+          <text class='title'>{{m.customer_name}}</text>
+          <text class='time'>{{m.create_at}}</text>
+        </view>
+        <view class='p'>
+          <template is="starbox" data="{{num:m.score}}"/> 
+        </view>
+      </view>
+    </view>
+    <view class='text' wx:if="{{m.remark!=''}}">{{m.remark}}</view>
+  </view>
+</template>

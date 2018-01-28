@@ -1,0 +1,174 @@
+<!--pages/sale/detaile/detaile.wxml-->
+<!-- 户型模板  -->
+<import src="/components/page/huxing/swHuxing/swHuxing.wxml"/> 
+<!-- 地图站位  -->
+<import src="/pages/map/mapbox/mapbox.wxml"/> 
+<!-- 楼盘动态  -->
+<import src="/components/page/dongtai/dongtai.wxml"/> 
+<!-- 楼盘点评  -->
+<import src="/components/page/dianping/pingbox/pingbox.wxml"/> 
+<!-- 楼盘点评列表  -->
+<import src="/components/page/dianping/pinglist/pinglist.wxml"/> 
+<view class="wrap">
+  <!-- 楼盘详情 -->
+  <view class="section section-detaile">
+    <view class="dt">
+      <!-- 楼盘图片 -->
+      <navigator class="a" url="{{'/pages/album/album?id='+obj.id}}">
+        <image  class="img" src="{{'http://imgs.zeju.cn'+obj.pic_file}}"/>
+      </navigator>
+      <!-- 查看图册  -->
+      <view class="img-box">查看图册{{obj.pictures_count}}</view>
+      <!--优惠  -->
+      <view class="youhui-box" wx:if="{{obj.discount_info!='暂无'}}">{{obj.discount_info}}</view>
+    </view>
+    <view class="dd">
+      <!-- 楼盘头部 -->
+      <view class="title-box">
+        <view class="left g-portrait-fen">
+          <view class="title g-text-ove1">{{obj.name}}</view>
+          <view class="addres g-text-ove1">别名：{{obj.item_alias}}</view>
+        </view>
+        <view class="right g-portrait-fen-center-ya">
+          距抢购结束倒计时
+        </view>
+      </view>
+      <!-- 抢购轮播  -->
+      <view></view>
+      <!-- 显示介绍  -->
+      <view class="text-box">
+        <view class='price-time list'>
+          <view class='price'><text>{{obj.price}}</text>{{obj.price_unit}}</view>
+          <view class='time'>{{obj.open_at}}特价开抢</view>
+        </view>
+        <view class="dizhi list">{{obj.detail_addres}}</view>
+        <view class='liyou list'>
+          <view class='labels'>
+            <view wx:for="{{obj.labels}}" wx:key="index" class="span g-label {{'g-label'+(index+1)}}">{{item}}</view>
+          </view>
+          <view class='a'>前往品牌馆</view>
+        </view>
+      </view>
+      <!-- 隐藏介绍  -->
+      <view class="text-box1" wx:if="{{detaileAsync}}">
+        <view class='list g-border'>
+          <view><text class='label'>开盘时间</text>：<text>{{obj.open_at}}</text></view>
+          <view><text class='label'>交房时间</text>：<text>{{obj.task_at}}</text></view>
+          <view><text class='label'>开发商</text>：<text>{{obj.developer}}</text></view>
+          <view><text class='label'>位置</text>：<text>{{obj.detail_addres}}</text></view>
+        </view>
+        <view class='list g-border'>
+          <view><text class='label'>物业类型</text>：<text>{{obj.property_type}}</text></view>
+          <view><text class='label'>装修状况</text>：<text>{{obj.decoration}}</text></view>
+          <view><text class='label'>均价</text>：<text>{{obj.price_unit == '待定'?'待定':obj.price + obj.price_unit}}</text></view>
+          <view><text class='label'>总价</text>：<text>{{obj.total_price == 0?'待定':obj.total_price+'万元'}}</text></view>
+          <view><text class='label'>最低首付</text>：<text>{{obj.min_shoufu > 0 ?obj.min_shoufu+'万元':'待定'}}</text></view>
+        </view>
+        <view class='list'>
+          <view><text class='label'>占地面积</text>：<text>{{obj.covers_area}}</text></view>
+          <view><text class='label'>电梯</text>：<text>{{obj.elevator}}</text></view>
+          <view><text class='label'>车位数</text>：<text>{{obj.parking_count}}</text></view>
+          <view><text class='label'>绿化率</text>：<text>{{obj.green_ratio}}</text></view>
+          <view><text class='label'>容积率</text>：<text>{{obj.volume_ratio}}</text></view>
+          <view><text class='label'>物业公司</text>：<text>{{obj.wuye_company}}</text></view>
+          <view><text class='label'>产权年限</text>：<text>{{obj.year}}</text></view>
+          <view><text class='label'>供暖方式</text>：<text>{{obj.supply_heat_way}}</text></view>
+          <view><text class='label'>供电方式</text>：<text>{{obj.supply_power_way}}</text></view>
+          <view><text class='label'>供水方式</text>：<text>{{obj.supply_water_way}}</text></view>
+          <view><text class='label'>供气方式</text>：<text>{{obj.supply_gas_way}}</text></view>
+          <view><text class='label'>建筑类型</text>：<text>{{obj.build_category}}</text></view>
+          <view><text class='label'>规划户数</text>：<text>{{obj.house_count}}</text></view>
+          <view><text class='label'>当前户数</text>：<text>{{obj.current_house_count}}</text></view>
+        </view>
+      </view>
+      <!-- 显示隐藏按钮  -->
+      <view class='text-box3'>
+        <text bindtap="detaileFn">更多详情</text>
+      </view>
+    </view>
+  </view>
+  <!-- 户型 -->
+  <view class="section">
+    <view class='s-header g-flex-fen-ya g-border'>
+      <text class='text'>户型（{{huxingObj.arr.length}}种）</text>
+      <navigator class="genduo" url="{{'/pages/huxing/huxing?id='+obj.id}}">
+        <text>更多</text><icon type="success" size="12"/>
+      </navigator>
+    </view>
+    <!-- 户型swiper模板  -->
+    <view class='s-main'>
+      <template is="huxing" data="{{huxingObj}}"/> 
+    </view>
+  </view>
+  <!-- 位置及周边 -->
+  <view class="section">
+    <view class='s-header g-flex-fen-ya g-border'>
+      <text class='text'>位置及周边</text>
+      <view class='genduo'><text>更多</text><icon type="success" size="12"/></view>
+    </view>
+    <!-- 地图站位模板  -->
+    <view class='s-main'>
+      <!-- <template is="mapbox" data="{{mapObj}}"/>  -->
+    </view>
+  </view>
+  <!-- 楼盘动态 -->
+  <view class="section">
+     <view class='s-header g-flex-fen-ya g-border'>
+      <text class='text'>楼盘动态</text>
+      <navigator class="genduo" url="{{'/pages/dongtai/dongtai?id='+obj.id}}">
+        <text>更多</text><icon type="success" size="12"/>
+      </navigator>
+    </view>
+    <!-- 动态列表  -->
+    <view class='s-main s-dongtai'>
+      <template is="dongtaiList" data="{{dongtaiArr}}"/>
+    </view>
+  </view>
+  <!-- 点评 -->
+  <view class="section">
+     <view class='s-header g-flex-fen-ya g-border'>
+      <text class='text'>点评</text>
+      <view class='genduo'>
+        <navigator url="{{'/pages/dongtai/dongtai?id='+obj.id}}">
+          <text>写点评</text>
+        </navigator>
+        <navigator url="{{'/pages/comment/comment/comment?id='+obj.id}}" wx:if="{{dianpingArr.length >0}}">
+          <text>更多</text><icon type="success" size="12"/>
+        </navigator>
+      </view>
+    </view>
+    <!-- 点评 头部，列表模板  -->
+    <view class='s-main s-ping'>
+      <template is="pingbox" data="{{obj:dianpingObj}}"/>
+      <view class='s-ping-list-box g-border1'>
+        <template is="pinglist" data="{{arr:dianpingArr}}"/>
+      </view>
+    </view>
+  </view>
+  <!-- 谁在这里买房 -->
+  <view class="section">
+     <view class='s-header g-flex-fen-ya g-border'>
+      <text class='text'>谁在这里买房</text>
+    </view>
+    <view class='s-main s-charts-box'>
+      <view class='list-box' wx:if="{{chartsAge.is_hidden}}">
+        <view class='title'>年龄</view>
+        <view>
+          <canvas canvas-id="ageCanvas" class='canvas'></canvas>
+        </view>
+      </view>
+       <view class='list-box' wx:if="{{chartsFavorites.is_hidden}}">
+        <view class='title'>兴趣爱好</view>
+        <view>
+          <canvas canvas-id="aihaoCanvas" class='canvas'></canvas>
+        </view>
+      </view> 
+       <view class='list-box' wx:if="{{chartsTrade.is_hidden}}">
+        <view class='title'>职业</view>
+        <view>
+          <canvas canvas-id="tradeCanvas" class='canvas'></canvas>
+        </view>
+      </view> 
+    </view>
+  </view>
+</view>

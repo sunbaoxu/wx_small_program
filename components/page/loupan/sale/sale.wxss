@@ -1,0 +1,114 @@
+/* 头部 */
+.dl{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.dl .dt{
+  width: 100%;
+  position: relative;
+  height: 430rpx;
+}
+.dt .img{
+  width: 100%;
+  height: 430rpx;
+  background-size: cover;
+}
+/* 楼盘图标 文案 */
+.dt .icon-box{
+  position: absolute;
+  top:30rpx;
+  display: flex;
+  left:-12rpx;
+}
+.dt .icon-box .icon-img{
+  height: 58rpx;
+  width: 14rpx;
+}
+.dt .icon-box .icon-text{
+  height: 44rpx;
+  width: auto;
+  background: #FF3B30;
+  font-size: 26rpx;
+  color:#fff;
+  padding-right: 10rpx;
+  display: flex;
+  align-items: center;
+}
+/* 楼盘名称介绍 */
+.dt .box{
+  position: absolute;
+  bottom: 0;
+  color:#fff;
+  background:rgba(0,0,0,0.7);
+  width: 100%;
+  height: 120rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 24rpx;
+}
+.dt .box .title{
+  display: flex;
+  height: 36rpx;
+  align-items: flex-end;
+  margin-bottom: 20rpx;
+}
+.dt .box .title .name{
+  font-size: 32rpx;
+  margin-right: 20rpx;
+}
+/* 主体  */
+.dd{
+  display: flex;
+  padding: 30rpx 0;
+}
+/* 左边  */
+.dd .left {
+  width:0;
+  flex: 1;
+  height: 84rpx;
+}
+.left .p{
+  display: flex;
+  height: 36rpx;
+  align-items: flex-end;
+}
+.left .price{
+  font-size: 24rpx;
+  color: #FF3B30;
+  margin-right: 20rpx;
+}
+.left .labels{
+  display: flex;
+  font-size: 16rpx;
+}
+.left .time{
+  font-size: 24rpx;
+  color: #FF3B30;
+}
+/* 右边  */
+.dd .right {
+  width:200rpx;
+  font-size: 24rpx;
+  color:#666;
+  height: 84rpx;
+}
+.right .date{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40rpx;
+}
+.right .date .span{
+  width:0;
+  flex:1;
+  background: #000;
+  color:#fff;
+  height: 100%;
+  margin:0 10rpx;
+}
+.right .date .span-left{
+  margin-left: 0;
+} 
+.right .date .span-right{
+  margin-right: 0;
+} 

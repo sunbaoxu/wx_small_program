@@ -1,0 +1,48 @@
+<!--pages/sale/sale.wxml-->
+<!-- 楼盘布局模板  -->
+ <import src="/components/page/loupan/sale/sale.wxml"/> 
+<!-- 加载更多  -->
+<import src="/components/page/loading/loading.wxml"/> 
+
+
+<!-- 主体内容  -->
+<view class="wrap">
+  <view class="header">
+    <view class="all g-flex-center-center {{navName =='all'?'on':''}}" bindtap="clickNavMame" data-label="all">全部</view>
+    <view class="nav_box">
+      <view class='nav'>
+        <view 
+          class="a {{navName == item.name?'on':''}}" 
+          wx:for="{{nameArr}}" 
+          wx:key="index" 
+          bindtap="clickNavMame" 
+          data-label="{{item.name}}"
+          >{{item.label}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="main">
+   <!-- 分类  -->
+   <view class='nav-box'>
+    <view class='nav'>
+      <view 
+        class="a g-flex-center-center a-left {{statusName=='疯抢中'?'a-on':''}}" 
+        bindtap="clickStatus" 
+        data-label="疯抢中"
+      >疯抢中</view>
+      <view 
+        class="a g-flex-center-center a-right {{statusName=='历史特卖'?'a-on':''}}" 
+        bindtap="clickStatus" 
+        data-label="历史特卖"
+      >历史特卖</view>
+    </view>
+   </view>
+   <view class="loupan-box">
+      <template is="items" data="{{itemArr}}"/> 
+   </view>
+  </view>
+  <!-- 加载更多  -->
+  <view wx:if="{{loadingAsync}}">
+    <template is="loading" data="{{type}}"/> 
+  </view>
+</view>

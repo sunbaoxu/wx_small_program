@@ -1,0 +1,9 @@
+<!--pages/activity/activity.wxml-->
+<view class="wrap">
+  <view class="main">
+    <view class="list" wx:for="{{arr}}" wx:key="index">
+      <view class="title" >{{item.title}}</view>
+      <image  class="img" src="{{item.url}}"/>
+    </view>
+  </view>
+</view>

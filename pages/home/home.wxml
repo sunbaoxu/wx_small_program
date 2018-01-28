@@ -1,0 +1,32 @@
+<!--pages/home/home.wxml-->
+<!-- 声明需要使用的模板文件 -->
+<import src ="../../components/page/nav/nav.wxml"/>
+<view class="wrap">
+  <view class="header">
+    <text class="text g-flex-mo-center-ya">{{message}}</text>
+  </view>
+  <view class="member">
+    <block wx:for="{{arr}}" wx:key="index">
+      <view class="title"> {{item.title}}</view>
+      <view class="text"> {{item.text}} </view>
+    </block>
+  </view>
+  <view class="from">
+    <form bindsubmit="formSubmit" bindreset="formReset" class='form-box g-portrait-fen-ya'>
+      <view class="list">
+        <input name="name" class='input' placeholder="请输入您的姓名" />
+      </view>
+      <view class="list">
+        <input name="phone" class="input" placeholder="请输入您的手机号" type="number"  bindinput='phoneFn' maxlength="11"/>
+        <text class="key-btn {{keyAsync?'on':''}}">{{keyText}}</text>
+      </view>
+      <view class="list">
+        <input name="key" class="input" placeholder="验证码" type="number" maxlength="4"/>
+      </view>
+      <view class="list list-btn">
+        <button formType="submit" class="submit">提交</button>
+        <!-- <button formType="reset">Reset</button> -->
+      </view>
+  </form>
+  </view>
+</view>

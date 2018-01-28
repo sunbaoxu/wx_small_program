@@ -1,0 +1,199 @@
+/**index.wxss**/
+/* 列表布局样式  */
+@import "/components/page/loupan/slide/slide.wxss";
+/* 加载更多  */
+@import "/components/page/loading/loading.wxss";
+page{
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+.wrap{
+  height: 100%;
+}
+.header{
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 2;
+  background: #fff;
+}
+/* 搜索  */
+.sou-box{
+  height: 60rpx;
+  width: 100%;
+  padding:0 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 22rpx;
+}
+.sou-box .sou-back{
+  height: 100%;
+  width: 100%;
+  background: #F6F6F6;
+  border-radius: 60rpx;
+  box-sizing: border-box;
+  border:1px solid #E1E1E1;
+  display: flex;
+  align-items: center;
+}
+/* 城市  */
+.sou-box .sou-back .city{
+  height: 36rpx;
+  font-size: 26rpx;
+  color:#333;
+  width: 134rpx;
+  border-right: 1px solid #DCDCDC;
+}
+.sou-box .sou-back .city .img{
+  width: 24rpx;
+  height: 12rpx;
+  margin-left: 10rpx;
+  transform: translate(0,1px);
+}
+.sou-box  .city-box{
+  position: absolute;
+  top:60rpx;
+  width: 100%;
+  background: #fff;
+  z-index: 5;
+  left: 0;
+  padding:0 30rpx;
+  box-sizing: border-box;
+}
+/* 搜索  */
+.sou-box .sou-back .shu-box{
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+.sou-back .shu-box .input{
+  font-size: 26rpx;
+  color:#999;
+  margin-left: 10rpx;
+}
+/* 菜单  */
+.caidan-box{
+  position: relative;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.caidan-box .cb-box{
+  height: 44rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.caidan-box .cb-box .list{
+  width:0;
+  flex: 1;
+  font-size: 28rpx;
+  color:#666;
+  border-right: 1px solid #DCDCDC;
+}
+.caidan-box .cb-box .list:last-child{
+  border-right: 0px;
+}
+.caidan-box .cb-box .list .text{
+  margin-right: 10rpx;
+}
+/* 分类  */
+.leiNav{
+  position: relative;
+}
+.leiNav .lei-nav{
+  padding:20rpx;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 4;
+  background: #fff;
+}
+.leiNav .list{
+  width: 344rpx;
+  background: #F0F2F5;
+  border-radius:8rpx;
+  height: 60rpx;
+  position: relative;
+  z-index: 3;
+}
+.leiNav .textName{
+  font-size: 24rpx;
+  color:#999;
+}
+.leiNav .leiBtn{
+  font-size: 28rpx;
+  color:#666;
+}
+.leiNav .leiBtn-on{
+  color: #f63
+}
+.leiNav .leiBtn text{
+  margin-right: 10rpx;
+}
+.leiNav .lei-box{
+  width: 100%;
+  position: absolute;
+  background: #fff;
+  top:80rpx;
+  z-index: 2;
+  left: 0;
+  display: none;
+}
+.leiNav .lei-box-down{
+  animation:g-down 1s ease forwards;
+}
+.leiNav .lei-box-up{
+  animation:g-up 1s ease forwards;
+}
+.leiNav .lei-box-on{
+  display: block;
+}
+
+/*主体  */
+.main{
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+/* 公共样式  */
+.icon-san{
+  height:10rpx;
+  width: 24rpx;
+  transform: translate(0,1px);
+}
+.back{
+  position: fixed;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+}
+.back-on{
+  display: block;
+}
+.back-down{
+  animation:g-down 1s ease forwards;
+}
+.back-up{
+  animation:g-up 1s ease forwards;
+}
+
+.lei-box .lei-list{
+  height: 72rpx;
+  font-size: 28rpx;
+  padding:0 20rpx;
+  box-sizing: border-box;
+  color:#666;
+}
+.lei-box .lei-list-on{
+  color:#f63;
+}
+/*分类 icon  */
+.lei-list .icon{
+  display: none;
+}
+.lei-list-on .icon{
+  display: block;
+}

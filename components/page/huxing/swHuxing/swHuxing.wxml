@@ -1,0 +1,20 @@
+<!--components/page/huxing/swHuxing/swHuxing.wxml-->
+<template name="huxing">
+  <swiper 
+    indicator-dots="{{huxingObj.indicatorDots}}"
+    autoplay="{{huxingObj.autoplay}}" 
+    interval="{{huxingObj.interval}}" 
+    duration="{{huxingObj.duration}}"
+    class="sw-wrap"
+    >
+    <block wx:for="{{huxingObj.arr}}" wx:key="index">
+      <swiper-item class="list g-portrait-fen-ya">
+        <image src="{{'http://imgs.zeju.cn/'+item.house_url}}" class="slide-image img"/>
+        <view class='text-box'>
+          <text class='text g-text-ove1'>{{item.housetype_name}}{{item.house_acreage}}</text>
+          <text class='liyou' wx:if="{{item.house_direction!=''}}">{{item.house_direction}}</text>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
